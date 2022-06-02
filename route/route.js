@@ -1,0 +1,10 @@
+const  express = require("express")
+ const router = express.Router()
+ const EMployeeControler = require("../controler/control")
+ const upload = require("../middleware/middleware")
+  router.get("/",EMployeeControler.index)
+  router.post("/store",upload.single('image'),EMployeeControler.store)
+  router.post("/show",EMployeeControler.show)
+  router.put("/:id",EMployeeControler.update)
+  router.delete("/:id",EMployeeControler.Destroye)
+   module.exports= router;
